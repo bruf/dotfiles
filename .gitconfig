@@ -1,0 +1,13 @@
+[user]
+	name = Boris Ruf
+	email = github@borisruf.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCHWXNZMbdaHEYsTB91KQX73oKRASopP7a8o3pSAjWQ
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true

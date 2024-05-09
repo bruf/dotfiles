@@ -5,6 +5,7 @@
 
 # mask built-ins with better defaults
 alias vi=nvim
+alias vim=nvim
 
 # Changing "ls" to "eza"
 #alias ls='eza -al --color=always --group-directories-first' # my preferred listing

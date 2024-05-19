@@ -22,7 +22,7 @@ fi
 
 # Editors
 export EDITOR="${EDITOR:-nvim}"
-export VISUAL="${VISUAL:-nvim}"
+export VISUAL="${VISUAL:-code}"
 export PAGER="${PAGER:-less}"
 
 # You may need to manually set your language environment

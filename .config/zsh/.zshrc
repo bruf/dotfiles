@@ -43,7 +43,8 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-${ZSH_VERSION}"
 
 zinit cdreplay -q
 
@@ -59,7 +60,7 @@ bindkey '^[w' kill-region
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTFILE=$HOME/.cache/zsh/history
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTDUP=erase
 setopt append_history
 setopt share_history

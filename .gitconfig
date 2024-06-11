@@ -10,7 +10,7 @@
   # macOS
   #program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
   # WSL2 on Windows 11
-  program = "C:/Users/boru9175/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+  program = "/mnt/c/Users/boru9175/AppData/Local/1Password/app/8/op-ssh-sign.exe"
 
 [commit]
   gpgsign = true

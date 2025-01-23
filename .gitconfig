@@ -1,22 +1,40 @@
 [user]
-  name = Boris Ruf
-  email = github@borisruf.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCHWXNZMbdaHEYsTB91KQX73oKRASopP7a8o3pSAjWQ
+    name = Boris Ruf
+    email = github@borisruf.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCHWXNZMbdaHEYsTB91KQX73oKRASopP7a8o3pSAjWQ
 
 [gpg]
-  format = ssh
+    format = ssh
 
 [gpg "ssh"]
-  # macOS
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-  # WSL2 on Windows 11
-  #program = "/mnt/c/Users/boru9175/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+    # macOS
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    # WSL2 on Windows 11
+    #program = "/mnt/c/Users/boru9175/AppData/Local/1Password/app/8/op-ssh-sign.exe"
 
 [commit]
-  gpgsign = true
+    gpgsign = true
 
 [core]
-  # macOS
-  sshCommand = ssh
-  # WSL2 on Windows 11
-  #sshCommand = ssh.exe
+    pager = delta
+    # macOS
+    sshCommand = ssh
+    # WSL2 on Windows 11
+    #sshCommand = ssh.exe
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

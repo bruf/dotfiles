@@ -14,9 +14,9 @@ blur = true
 option_as_alt = "Both"
 
 [font]
-normal.family = "JetBrainsMono Nerd Font Mono"
+normal.family = "Maple Mono NF"
 
 size = 16
 
 [general]
-import = ["~/.config/alacritty/themes/catppuccin-macchiato.toml"]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]

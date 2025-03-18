@@ -4,12 +4,6 @@
         {
             "alignment": "left",
             "segments": [
-                // {
-                //     "foreground": "red",
-                //     "style": "plain",
-                //     "template": "{{ .UserName }} ",
-                //     "type": "session"
-                // },
                 {
                     "foreground": "blue",
                     "properties": {

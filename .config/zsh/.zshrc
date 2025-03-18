@@ -8,20 +8,20 @@
 # fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [[ -f "/opt/homebrew/bin/brew" ]] then
-    # If you're using macOS, you'll want this enabled
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
+    if [[ -f "/opt/homebrew/bin/brew" ]] then
+        # If you're using macOS, you'll want this enabled
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
   
-  if [ -d "$(brew --prefix)/opt/python@3/libexec/bin" ]; then
-    export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
-  fi
+    if [ -d "$(brew --prefix)/opt/python@3/libexec/bin" ]; then
+        export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
+    fi
 fi
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source zinit
@@ -91,12 +91,12 @@ export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
+    fd --hidden --exclude .git . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
+    fd --type=d --hidden --exclude .git . "$1"
 }
 
 source $HOME/.bin/fzf-git.sh
@@ -110,15 +110,15 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 # - The first argument to the function is the name of the command.
 # - You should make sure to pass the rest of the arguments to fzf.
 _fzf_comprun() {
-  local command=$1
-  shift
+    local command=$1
+    shift
 
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
-  esac
+    case "$command" in
+        cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+        export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
+        ssh)          fzf --preview 'dig {}'                   "$@" ;;
+        *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+    esac
 }
 
 # Shell integrations

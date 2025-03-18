@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Font configuration
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold"})
+config.font = wezterm.font("Maple Mono NF", { weight = "Bold"})
 config.font_size = 16
 
 -- Disable tab bar
@@ -13,11 +13,11 @@ config.enable_tab_bar = false
 
 -- Color scheme
 function scheme_for_appearance(appearance)
-  if appearance:find "Dark" then
-    return "Catppuccin Mocha"
-  else
-    return "Catppuccin Latte"
-  end
+    if appearance:find "Dark" then
+        return "Catppuccin Mocha"
+    else
+        return "Catppuccin Latte"
+    end
 end
 
 -- Set color scheme 
